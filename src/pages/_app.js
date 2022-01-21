@@ -3,6 +3,7 @@ import Head from 'next/head'
 import CssBaseline from '@mui/material/CssBaseline'
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import createEmotionCache from 'utils/createEmotionCache'
+import Layout from 'components/Layout'
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -15,7 +16,9 @@ export default function MyApp(props) {
 				<meta name='viewport' content='initial-scale=1, width=device-width' />
 			</Head>
 			<CssBaseline />
-			<Component {...pageProps} />
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
 		</CacheProvider>
 	)
 }
